@@ -1,0 +1,9 @@
+while (select AVG(PRECIO) from producto) < 1800.00
+BEGIN
+  update PRODUCTO set PRECIO=PRECIO*1.1;
+  IF (SELECT MAX(PRECIO) FROM PRODUCTO) > 5000.00
+  break
+  else
+  continue
+END
+PRINT 'NO HAY MAS PRECIOS QUE ACTUALIZAR'
